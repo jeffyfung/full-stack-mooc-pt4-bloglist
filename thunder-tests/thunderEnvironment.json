@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "07a2b763-f785-45bd-8dd4-6844b04e3a15",
+    "name": "dotenv",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-04-17T16:24:36.825Z",
+    "modified": "2022-04-17T16:24:53.649Z",
+    "data": [],
+    "envFile": "..\\.env"
+  }
+]

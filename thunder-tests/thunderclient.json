@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "d7c14c23-0462-48cb-96b3-2a5128753c80",
+    "colId": "7f4fc3c7-6585-4bf8-aa58-e15574702670",
+    "containerId": "",
+    "name": "insert blog",
+    "url": "http://localhost:{{PORT}}/api/blogs",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-04-17T16:27:12.868Z",
+    "modified": "2022-04-17T16:27:12.868Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"title\": \"goodbye\",\n    \"author\": \"john\",\n    \"url\": \".....url\",\n    \"likes\": \"100\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "04798fb5-f2a4-470f-a72d-ad04071f79aa",
+    "colId": "7f4fc3c7-6585-4bf8-aa58-e15574702670",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/blogs",
+    "url": "http://localhost:{{PORT}}/api/blogs",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-04-17T16:27:30.875Z",
+    "modified": "2022-04-17T16:27:30.875Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
