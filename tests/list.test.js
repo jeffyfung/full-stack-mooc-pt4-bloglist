@@ -51,6 +51,41 @@ const listWithSomeBlogs = [
   }
 ];
 
+const listWithDifferentAuthors = [
+  {
+    _id: '5a422aa71b54a676234d17f8',
+    title: 'Go To Statement Considered Harmful',
+    author: 'Tom Wong',
+    url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
+    likes: 3,
+    __v: 0
+  },
+  {
+    _id: '5a422aa71b54a676234d17f8',
+    title: 'Go To Statement Considered Harmful',
+    author: 'Edsger W. Dijkstra',
+    url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
+    likes: 2,
+    __v: 0
+  },
+  {
+    _id: '5a422aa71b54a676234d17f8',
+    title: 'Go To Statement Considered Harmful',
+    author: 'Tom Wong',
+    url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
+    likes: 1,
+    __v: 0
+  },
+  {
+    _id: '5a422aa71b54a676234d17f8',
+    title: 'Go To Statement Considered Harmful',
+    author: 'Adam Ondra',
+    url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
+    likes: 4,
+    __v: 0
+  }
+];
+
 describe('total likes', () => {
   test('of empty list is zero', () => {
     expect(listHelper.totalLikes([])).toBe(0);
@@ -79,6 +114,36 @@ describe('favorite blog', () => {
         url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
         likes: 4,
         __v: 0
+      }
+    );
+  });
+});
+
+describe('favorite blog', () => {
+  test('of empty list is zero', () => {
+    expect(listHelper.mostBlogs([])).toBeNull();
+  });
+
+  test('of list containing multiple blogs', () => {
+    expect(listHelper.mostBlogs(listWithDifferentAuthors)).toEqual(
+      {
+        author: 'Tom Wong',
+        blogs: 2
+      }
+    );
+  });
+});
+
+describe('favorite blog', () => {
+  test('of empty list is zero', () => {
+    expect(listHelper.mostLikes([])).toBeNull();
+  });
+
+  test('of list containing multiple blogs', () => {
+    expect(listHelper.mostLikes(listWithDifferentAuthors)).toEqual(
+      {
+        author: 'Tom Wong',
+        likes: 4
       }
     );
   });
