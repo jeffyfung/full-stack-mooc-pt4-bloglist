@@ -11,7 +11,7 @@ beforeEach(async () => {
   await Blog.insertMany(helper.initialBlogs);
 });
 
-describe('test suite 1', () => {
+describe('test suite 1 - 4.8', () => {
   test('no blog return empty array', async () => {
     await Blog.deleteMany({});
 
@@ -24,6 +24,15 @@ describe('test suite 1', () => {
     let refTitle = helper.initialBlogs[0].title;
     expect(outputTitle).toContain(refTitle);
     expect(outputTitle.length).toBe(helper.initialBlogs.length);
+  });
+});
+
+describe('test suite 2 - 4.9', () => {
+  test('returned blogs contains .id', async () => {
+    let res = await api.get('/api/blogs');
+    for (let blog of res.body) {
+      expect(blog.id).toBeDefined();
+    }
   });
 });
 
