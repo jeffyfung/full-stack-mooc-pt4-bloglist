@@ -45,6 +45,14 @@ describe('test suite 3 - 4.10', () => {
   });
 });
 
+describe('test suite 4 - 4.11', () => {
+  test('.likes defaulted to 0', async () => {
+    await api.post('/api/blogs').send(helper.newBlogWithEmptyLikes);
+    let res = await helper.blogsInDb();
+    expect(res.find(blog => blog.title === helper.newBlogWithEmptyLikes.title).likes).toBe(0);
+  });
+});
+
 afterAll(() => {
   mongoose.connection.close();
 });

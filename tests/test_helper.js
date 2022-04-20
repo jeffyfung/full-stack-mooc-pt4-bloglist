@@ -22,6 +22,12 @@ const newBlog = {
   likes: 99
 };
 
+const newBlogWithEmptyLikes = {
+  title: 'dont swallow the cap',
+  author: 'the national',
+  url: 'foo'
+};
+
 const blogsInDb = async () => {
   const blogs = await Blog.find({});
   return blogs;
@@ -30,5 +36,6 @@ const blogsInDb = async () => {
 module.exports = {
   initialBlogs,
   newBlog,
+  newBlogWithEmptyLikes,
   blogsInDb
 };
