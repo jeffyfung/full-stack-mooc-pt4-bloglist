@@ -23,6 +23,7 @@ describe('test suite 1', () => {
     let outputTitle = res.body.map(blog => blog.title);
     let refTitle = helper.initialBlogs[0].title;
     expect(outputTitle).toContain(refTitle);
+    expect(outputTitle.length).toBe(helper.initialBlogs.length);
   });
 });
 
