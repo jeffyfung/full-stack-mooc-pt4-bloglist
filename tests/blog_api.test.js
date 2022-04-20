@@ -36,6 +36,14 @@ describe('test suite 2 - 4.9', () => {
   });
 });
 
+describe('test suite 3 - 4.10', () => {
+  test('POST request creates new blog post', async () => {
+    await api.post('/api/blogs').send(helper.newBlog);
+    let res = await helper.blogsInDb();
+    expect(res).toHaveLength(helper.initialBlogs.length + 1);
+    expect(res.map(blog => blog.title)).toContain(helper.newBlog.title);
+  });
+});
 
 afterAll(() => {
   mongoose.connection.close();
