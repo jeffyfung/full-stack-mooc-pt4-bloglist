@@ -53,6 +53,17 @@ describe('test suite 4 - 4.11', () => {
   });
 });
 
+describe('test suite 5 - 4.12', () => {
+  test('.title is compulsory to create blog post', async () => {
+    let res = await api.post('/api/blogs').send(helper.newBlogWithoutTitle);
+    expect(res.status).toBe(400);
+  }),
+  test('.url is compulsory to create blog post', async () => {
+    let res = await api.post('/api/blogs').send(helper.newBlogWithoutUrl);
+    expect(res.status).toBe(400);
+  });
+});
+
 afterAll(() => {
   mongoose.connection.close();
 });

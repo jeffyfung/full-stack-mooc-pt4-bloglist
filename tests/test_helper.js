@@ -28,6 +28,16 @@ const newBlogWithEmptyLikes = {
   url: 'foo'
 };
 
+const newBlogWithoutTitle = {
+  author: 'the national',
+  url: 'foo'
+};
+
+const newBlogWithoutUrl = {
+  title: 'dont swallow the cap',
+  author: 'the national'
+};
+
 const blogsInDb = async () => {
   const blogs = await Blog.find({});
   return blogs;
@@ -37,5 +47,7 @@ module.exports = {
   initialBlogs,
   newBlog,
   newBlogWithEmptyLikes,
+  newBlogWithoutTitle,
+  newBlogWithoutUrl,
   blogsInDb
 };
