@@ -69,7 +69,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-04-24T11:40:52.712Z",
-    "modified": "2022-04-24T13:17:43.369Z",
+    "modified": "2022-04-24T14:16:08.039Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -122,6 +122,25 @@
     "body": {
       "type": "json",
       "raw": "{\n    \"title\": \"because we need each other\",\n    \"author\": \"jeff\",\n    \"url\": \"..url\",\n    \"likes\": 1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f2efd2c8-c702-4da2-bb5e-c91ba9f5ccf0",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/login/",
+    "url": "http://localhost:{{PORT}}/api/login/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-04-24T14:18:42.131Z",
+    "modified": "2022-04-24T14:22:16.065Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"username\": \"miket\",\n    \"password\": \"12345\"\n}",
       "form": []
     },
     "tests": []
