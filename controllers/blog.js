@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Blog = require('../models/blog');
 
 router.get('/', async (req, res, next) => {
+  console.log('in post request');
   try {
     let blogs = await Blog.find({});
     res.json(blogs);
