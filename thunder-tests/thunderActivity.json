@@ -69,7 +69,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-04-24T11:40:52.712Z",
-    "modified": "2022-04-24T11:48:01.994Z",
+    "modified": "2022-04-24T12:04:46.911Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -83,12 +83,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-04-24T11:44:04.700Z",
-    "modified": "2022-04-24T11:47:48.124Z",
+    "modified": "2022-04-24T12:05:46.825Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"username\": \"jeff\",\n    \"name\": \"jeffrey fung\",\n    \"password\": \"123456\"\n}",
+      "raw": "{\n    \"username\": \"fff\",\n    \"name\": \"jeffrey fung\",\n    \"password\": \"12\"\n}",
       "form": []
     },
     "tests": []

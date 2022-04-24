@@ -6,6 +6,7 @@ const helper = require('./test_helper');
 
 const api = supertest(app);
 
+// alternative: use MongoDB in-memory storage engine
 beforeEach(async () => {
   await Blog.deleteMany({});
   await Blog.insertMany(helper.initialBlogs);
@@ -64,6 +65,6 @@ describe('test suite 5 - 4.12', () => {
   });
 });
 
-afterAll(() => {
+afterAll(async () => {
   mongoose.connection.close();
 });

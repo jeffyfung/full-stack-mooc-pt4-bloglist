@@ -3,16 +3,11 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
+    minlength: 3,
     required: true
   },
-  name: {
-    type: String,
-    required: true
-  },
-  passwordHash: {
-    type: String,
-    required: true
-  },
+  name: String,
+  passwordHash: String
 });
 
 userSchema.set('toJSON',{

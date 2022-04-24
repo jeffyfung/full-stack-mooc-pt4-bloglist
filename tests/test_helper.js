@@ -1,4 +1,5 @@
 const Blog = require('../models/blog');
+const User = require('../models/user');
 
 const initialBlogs = [
   {
@@ -43,11 +44,45 @@ const blogsInDb = async () => {
   return blogs;
 };
 
+const newUser = {
+  username: 'johnc',
+  name: 'john chan',
+  password: 'qTU(X[?3Sd{9E>?'
+};
+
+const userWithInvalidUsernameLength = {
+  username: 'j',
+  name: 'john chan',
+  password: 'qTU(X[?3Sd{9E>?'
+};
+
+const userWithInvalidPasswordLength = {
+  username: 'j',
+  name: 'john chan',
+  password: '1'
+};
+
+const userWithDuplicatedUsername = {
+  username: 'root',
+  name: 'john chan',
+  password: 'qTU(X[?3Sd{9E>?'
+};
+
+const usersInDb = async () => {
+  const users = await User.find({});
+  return users;
+};
+
 module.exports = {
   initialBlogs,
   newBlog,
   newBlogWithEmptyLikes,
   newBlogWithoutTitle,
   newBlogWithoutUrl,
-  blogsInDb
+  blogsInDb,
+  newUser,
+  userWithInvalidUsernameLength,
+  userWithInvalidPasswordLength,
+  userWithDuplicatedUsername,
+  usersInDb
 };
