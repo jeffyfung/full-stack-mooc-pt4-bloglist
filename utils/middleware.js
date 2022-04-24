@@ -1,5 +1,13 @@
 const logger = require('./logger');
 
+const decodeJWT = (req, res, next) => {
+  const authorization = req.get('authorization');
+  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+    req.token = authorization.substring(7);
+  }
+  next();
+};
+
 const unknownEndpoint = (req, res) => {
   res.status(404).json({ error: 'unknown endpoint' });
 };
@@ -17,6 +25,7 @@ const errorHandler = (err, req, res, next) => {
 };
 
 module.exports = {
+  decodeJWT,
   unknownEndpoint,
   errorHandler
 };
