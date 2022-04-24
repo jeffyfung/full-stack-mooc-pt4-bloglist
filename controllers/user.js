@@ -1,5 +1,6 @@
 const userRouter = require('express').Router();
 const User = require('../models/user');
+const Blog = require('../models/blog');
 const bcrypt = require('bcrypt');
 
 userRouter.post('/', async (req, res, next) => {
@@ -17,10 +18,12 @@ userRouter.post('/', async (req, res, next) => {
     const saltRounds = 10;
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
+    const tmpBlogs = await Blog.find({});
     const user = new User({
       username,
       name,
-      passwordHash
+      passwordHash,
+      blogs: tmpBlogs.map(b => b._id)
     });
 
     const savedUser = await user.save();
@@ -32,7 +35,7 @@ userRouter.post('/', async (req, res, next) => {
 
 userRouter.get('/', async (req, res, next) => {
   try {
-    const users = await User.find({});
+    const users = await User.find({}).populate('blogs');
     res.status(200).json(users);
   } catch (err) {
     next(err);

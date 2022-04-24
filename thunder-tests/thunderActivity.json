@@ -69,7 +69,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-04-24T11:40:52.712Z",
-    "modified": "2022-04-24T12:04:46.911Z",
+    "modified": "2022-04-24T13:17:43.369Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -83,12 +83,45 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-04-24T11:44:04.700Z",
-    "modified": "2022-04-24T12:05:46.825Z",
+    "modified": "2022-04-24T13:14:47.690Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"username\": \"fff\",\n    \"name\": \"jeffrey fung\",\n    \"password\": \"12\"\n}",
+      "raw": "{\n    \"username\": \"miket\",\n    \"name\": \"mike tyson\",\n    \"password\": \"123456\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a149cefc-d9ab-4955-ab73-7c6260131d7a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/blogs/",
+    "url": "http://localhost:{{PORT}}/api/blogs/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-04-24T13:18:10.010Z",
+    "modified": "2022-04-24T13:20:21.830Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "627ea32f-f501-4c92-a707-94ea7f3c551c",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/blogs/",
+    "url": "http://localhost:{{PORT}}/api/blogs/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-04-24T13:20:06.662Z",
+    "modified": "2022-04-24T13:20:06.713Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"title\": \"because we need each other\",\n    \"author\": \"jeff\",\n    \"url\": \"..url\",\n    \"likes\": 1\n}",
       "form": []
     },
     "tests": []
