@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const Blog = require('../models/blog');
-const User = require('../models/user');
-const jwt = require('jsonwebtoken');
+const middleware = require('../utils/middleware');
 
 router.get('/', async (req, res, next) => {
   try {
@@ -12,21 +11,13 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', middleware.userExtractor, async (req, res, next) => {
   try {
-    const decodedToken = jwt.verify(req.token, process.env.SECRET);
-    if (!decodedToken.id) {
-      return res.status(401).json({ error: 'token missing or invalid' });
-    }
-    const user = await User.findById(decodedToken.id);
-
-    const blog = new Blog({
-      ...req.body,
-      user: user.id
-    });
+    const blog = new Blog(req.body);
     let blogs = await blog.save();
-    user.blogs = user.blogs.concat(blog.id);
-    await user.save();
+    console.log(req.user);
+    req.user.blogs = req.user.blogs.concat(blog.id);
+    await req.user.save();
 
     res.status(201).json(blogs);
   } catch (err) {
@@ -34,20 +25,14 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', middleware.userExtractor, async (req, res, next) => {
   try {
-    const decodedToken = jwt.verify(req.token, process.env.SECRET);
-    if (!decodedToken.id) {
-      return res.status(401).json({ error: 'token missing or invalid' });
-    }
-
     const blog = await Blog.findById(req.params.id);
-    console.log(blog);
     if (!blog) {
       return res.status(404).json({ error: 'blog does not exist' });
     }
 
-    if (blog.user.toString() !== decodedToken.id) {
+    if (blog.user.toString() !== req.user.id.toString()) {
       return res.status(401).json({ error: 'no authority to delete this blog' });
     }
 
