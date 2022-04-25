@@ -15,7 +15,6 @@ router.post('/', middleware.userExtractor, async (req, res, next) => {
   try {
     const blog = new Blog(req.body);
     let blogs = await blog.save();
-    console.log(req.user);
     req.user.blogs = req.user.blogs.concat(blog.id);
     await req.user.save();
 
