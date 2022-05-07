@@ -13,12 +13,22 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', middleware.userExtractor, async (req, res, next) => {
   try {
-    const blog = new Blog(req.body);
+    const blog = new Blog({ ...req.body, user: req.user._id });
     let blogs = await blog.save();
     req.user.blogs = req.user.blogs.concat(blog.id);
     await req.user.save();
 
     res.status(201).json(blogs);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.put('/:id', middleware.userExtractor, async (req, res, next) => {
+  try {
+    let options = { new: true };
+    let blog = await Blog.findByIdAndUpdate(req.params.id, { ...req.body }, options);
+    res.status(200).json(blog);
   } catch (err) {
     next(err);
   }

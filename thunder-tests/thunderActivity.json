@@ -83,12 +83,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-04-24T11:44:04.700Z",
-    "modified": "2022-04-24T15:33:54.246Z",
+    "modified": "2022-05-06T14:25:32.194Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"username\": \"jeffreyfung\",\n    \"name\": \"jf\",\n    \"password\": \"123456\"\n}",
+      "raw": "{\n    \"username\": \"root\",\n    \"password\": \"123456\"\n}",
       "form": []
     },
     "tests": []
@@ -140,12 +140,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-04-24T14:18:42.131Z",
-    "modified": "2022-04-24T15:56:28.982Z",
+    "modified": "2022-04-28T04:27:11.415Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"username\": \"miket\",\n    \"password\": \"123456\"\n}",
+      "raw": "{\n    \"username\": \"jeffreyfung\",\n    \"password\": \"123456\"\n}",
       "form": []
     },
     "tests": []
@@ -243,6 +243,79 @@
       }
     ],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d8f3c955-76fd-4c53-9419-73e5a921002f",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/626d54d95420232550617ffb",
+    "url": "http://localhost:{{PORT}}/api/626d54d95420232550617ffb",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-04-30T16:08:53.776Z",
+    "modified": "2022-04-30T16:09:00.758Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2V0IiwiaWQiOiI2MjY1NGQ0NzYxYmE5NDFkZTRlYzFhYzUiLCJpYXQiOjE2NTA4MTU3ODh9.T3KNLgddJzM5fiH9C2eK2ysOV9qhQaySV9tEAIF3n9M"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"likes\": -2\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b0e53308-0be2-48d5-8280-53b0bf5d7efc",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/blogs/626d54d95420232550617ffb",
+    "url": "http://localhost:{{PORT}}/api/testing/reset",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-04-30T16:09:26.181Z",
+    "modified": "2022-05-06T14:03:28.922Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2V0IiwiaWQiOiI2MjY1NGQ0NzYxYmE5NDFkZTRlYzFhYzUiLCJpYXQiOjE2NTA4MTU3ODh9.T3KNLgddJzM5fiH9C2eK2ysOV9qhQaySV9tEAIF3n9M",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "71c23770-5e3b-4a6a-b16f-185919bae8a2",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/blog/626d54d95420232550617ffb",
+    "url": "http://localhost:{{PORT}}/api/blog/626d54d95420232550617ffb",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-04-30T16:09:36.323Z",
+    "modified": "2022-04-30T16:09:36.338Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2V0IiwiaWQiOiI2MjY1NGQ0NzYxYmE5NDFkZTRlYzFhYzUiLCJpYXQiOjE2NTA4MTU3ODh9.T3KNLgddJzM5fiH9C2eK2ysOV9qhQaySV9tEAIF3n9M"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"likes\": -2\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
